@@ -1,0 +1,32 @@
+node_modules
+.env
+
+# Hardhat files
+/cache
+/artifacts
+
+# TypeChain files
+/typechain
+/typechain-types
+
+# solidity-coverage files
+/coverage
+/coverage.json
+
+#ignition
+ignition/deployments
+
+#other scripts for testing
+scripts/univ3unipositions.js
+scripts/test.js
+scripts/issuer.js
+scripts/deploy.js
+scripts/account.js
+scripts/votingrights.js
+contracts/Acquisition.sol
+contracts/Test.sol
+contracts/TetherToken.sol
+contracts/VotingRights.sol
+gas_costs.txt
+
+test/usdt-subgraph
