@@ -29,4 +29,5 @@ contracts/TetherToken.sol
 contracts/VotingRights.sol
 gas_costs.txt
 
-test/usdt-subgraph
+test/usdt-subgraph/
+/old

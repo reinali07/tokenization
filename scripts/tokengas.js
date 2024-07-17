@@ -7,16 +7,18 @@ async function main() {
     const nftaddress = addresses['StockModule#MyNFT']
     const erc20address = addresses['StockModule#MyERC20']
 
-    const [owner, account1,account2,account3,account4] = await hre.ethers.getSigners();
+    const [owner, account1] = await hre.ethers.getSigners();
 
     const erc20 = await hre.ethers.getContractAt("MyERC20", erc20address, owner);
     const nft = await hre.ethers.getContractAt("MyNFT", nftaddress, owner);
 
-
+    await nft.safeMint(account1,0);
     const txn1 = await nft.safeMint(account1,1);
     const receipt1 = await txn1.wait();
     console.log(receipt1.gasUsed);
 
+    erc20.mint(owner,2);
+    await erc20.transfer(account1,1);
     const txn2 = await erc20.transfer(account1,1);
     const receipt2 = await txn2.wait();
     console.log(receipt2.gasUsed);
